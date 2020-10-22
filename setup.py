@@ -85,7 +85,7 @@ class TransifexCommand(distutils.cmd.Command):
 
 setup(
     name='sphinx-veldus-theme',
-    version='0.0.4',
+    version='0.0.5',
     url='https://github.com/DukeOfEtiquette/sphinx_veldus_theme',
     license='MIT',
     author='Adam DuQuette',
