@@ -2,18 +2,20 @@
 Veldus Sphinx Theme
 *******************
 
-.. .. image:: https://img.shields.io/pypi/v/sphinx_veldus_theme.svg
-..    :target: https://pypi.python.org/pypi/sphinx_veldus_theme
-..    :alt: Pypi Version
 .. .. image:: https://travis-ci.org/readthedocs/sphinx_veldus_theme.svg?branch=master
 ..    :target: https://travis-ci.org/readthedocs/sphinx_veldus_theme
 ..    :alt: Build Status
-.. .. image:: https://img.shields.io/pypi/l/sphinx_veldus_theme.svg
-..    :target: https://pypi.python.org/pypi/sphinx_veldus_theme/
-..    :alt: License
 .. .. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
 ..   :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
 ..   :alt: Documentation Status
+
+.. image:: https://badge.fury.io/py/sphinx-veldus-theme.svg
+    :target: https://badge.fury.io/py/sphinx-veldus-theme
+    :alt: Pypi Version
+
+.. image:: https://img.shields.io/pypi/l/sphinx_veldus_theme.svg
+    :target: https://pypi.python.org/pypi/sphinx_veldus_theme/
+    :alt: License
 
 This is a fork of the official `Read the Docs`_ theme for Sphinx_. See their `theme documentation`_ for more information.
 
@@ -122,6 +124,10 @@ Run the release build script:
 
 Package the build
 -----------------
+
+Find more information about packaging at the `Python Packaging User Guide`_.
+
+.. _Python Packaging User Guide: https://packaging.python.org/tutorials/packaging-projects/
 
 .. code:: console
 
