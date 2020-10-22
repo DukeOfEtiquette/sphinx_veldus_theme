@@ -1,24 +1,21 @@
-**************************
-Read the Docs Sphinx Theme
-**************************
+*******************
+Veldus Sphinx Theme
+*******************
 
-.. image:: https://img.shields.io/pypi/v/sphinx_rtd_theme.svg
-   :target: https://pypi.python.org/pypi/sphinx_rtd_theme
-   :alt: Pypi Version
-.. image:: https://travis-ci.org/readthedocs/sphinx_rtd_theme.svg?branch=master
-   :target: https://travis-ci.org/readthedocs/sphinx_rtd_theme
-   :alt: Build Status
-.. image:: https://img.shields.io/pypi/l/sphinx_rtd_theme.svg
-   :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
-   :alt: License
-.. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
-  :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
-  :alt: Documentation Status
+.. .. image:: https://img.shields.io/pypi/v/sphinx_veldus_theme.svg
+..    :target: https://pypi.python.org/pypi/sphinx_veldus_theme
+..    :alt: Pypi Version
+.. .. image:: https://travis-ci.org/readthedocs/sphinx_veldus_theme.svg?branch=master
+..    :target: https://travis-ci.org/readthedocs/sphinx_veldus_theme
+..    :alt: Build Status
+.. .. image:: https://img.shields.io/pypi/l/sphinx_veldus_theme.svg
+..    :target: https://pypi.python.org/pypi/sphinx_veldus_theme/
+..    :alt: License
+.. .. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
+..   :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
+..   :alt: Documentation Status
 
-This Sphinx_ theme was designed to provide a great reader experience for
-documentation users on both desktop and mobile devices. This theme is used
-primarily on `Read the Docs`_ but can work with any Sphinx project. You can find
-a working demo of the theme in the `theme documentation`_
+This is a fork of the official `Read the Docs`_ theme for Sphinx_. See their `theme documentation`_ for more information.
 
 .. _Sphinx: http://www.sphinx-doc.org
 .. _Read the Docs: http://www.readthedocs.org
@@ -31,25 +28,25 @@ This theme is distributed on PyPI_ and can be installed with ``pip``:
 
 .. code:: console
 
-   $ pip install sphinx-rtd-theme
+   $ pip install sphinx_veldus_theme
 
 To use the theme in your Sphinx project, you will need to add the following to
 your ``conf.py`` file:
 
 .. code:: python
 
-    import sphinx_rtd_theme
+    import sphinx_veldus_theme
 
     extensions = [
         ...
-        "sphinx_rtd_theme",
+        "sphinx_veldus_theme",
     ]
 
-    html_theme = "sphinx_rtd_theme"
+    html_theme = "sphinx_veldus_theme"
 
 For more information read the full documentation on `installing the theme`_
 
-.. _PyPI: https://pypi.python.org/pypi/sphinx_rtd_theme
+.. _PyPI: https://pypi.python.org/pypi/sphinx_veldus_theme
 .. _installing the theme: https://sphinx-rtd-theme.readthedocs.io/en/latest/installing.html
 
 Configuration
@@ -61,10 +58,84 @@ To see all the possible configuration options, read the documentation on
 
 .. _configuring the theme: https://sphinx-rtd-theme.readthedocs.io/en/latest/configuring.html
 
-Contributing
-============
+Modifying the theme
+===================
 
-If you would like to help modify or translate the theme, you'll find more
-information on contributing in our `contributing guide`_.
+The styles for this theme use SASS_ and a custom CSS framework called Wyrm_. We
+use Webpack_ and node-sass_ to build the CSS. Webpack_ is used to watch for
+changes, rebuild the static assets, and rebuild the Sphinx demo documentation.
 
-.. _contributing guide: https://sphinx-rtd-theme.readthedocs.io/en/latest/contributing.html
+.. note::
+    The installation of Node is outside the scope of this documentation. You
+    will need Node version 10+ in order to make changes to this theme.
+
+Set up your environment
+-----------------------
+
+#. Install Sphinx_ and documentation build dependencies.
+
+   .. code:: console
+
+       $ pip install -e '.[dev]'
+
+#. Install Webpack_, node-sass_, and theme dependencies locally.
+
+   .. code:: console
+
+       $ npm install
+
+Making changes
+--------------
+
+Changes to the theme can be compiled and tested with Webpack_:
+
+.. code:: console
+
+    $ npm run dev
+
+This script will do the following:
+
+#. Install and update any dependencies.
+#. Build the static CSS from SASS source files.
+#. Build the demo documentation.
+#. Watch for changes to the SASS files and documentation and rebuild everything
+   on any detected changes.
+
+.. _Webpack: https://webpack.js.org/
+.. _node-sass: https://github.com/sass/node-sass
+.. _SASS: http://www.sass-lang.com
+.. _Wyrm: http://www.github.com/snide/wyrm/
+
+Updating PyPI
+=============
+
+After making an update to the project, you need to build, package, then update PyPI with the new updates.
+
+Build
+-----
+
+Run the release build script:
+
+.. code:: console
+
+    $ npm run build
+
+Package the build
+-----------------
+
+.. code:: console
+
+    $ python3 setup.py sdist bdist_wheel
+
+Uploading
+---------
+
+Use Twine to upload the new package to PyPi:
+
+.. code:: console
+
+    $ python3 -m twine upload dist/*
+
+.. note::
+
+    This will attempt to upload everything in your *dist/* directory. Either remove unwanted files, and change *dist/\** to be more specific.

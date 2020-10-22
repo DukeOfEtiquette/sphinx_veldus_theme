@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""`sphinx_rtd_theme` lives on `Github`_.
+"""`sphinx_veldus_theme` lives on `Github`_.
 
-.. _github: https://github.com/readthedocs/sphinx_rtd_theme
+.. _github: https://github.com/DukeOfEtiquette/sphinx_veldus_theme
 
 """
 
@@ -84,12 +84,12 @@ class TransifexCommand(distutils.cmd.Command):
 
 
 setup(
-    name='sphinx_rtd_theme',
-    version='0.5.0',
-    url='https://github.com/readthedocs/sphinx_rtd_theme',
+    name='sphinx-veldus-theme',
+    version='0.0.4',
+    url='https://github.com/DukeOfEtiquette/sphinx_veldus_theme',
     license='MIT',
-    author='Dave Snider, Read the Docs, Inc. & contributors',
-    author_email='dev@readthedocs.org',
+    author='Adam DuQuette',
+    author_email='duquetteadam@gmail.com',
     description='Read the Docs theme for Sphinx',
     long_description=open('README.rst', encoding='utf-8').read(),
     cmdclass={
@@ -99,8 +99,8 @@ setup(
         'watch': WebpackDevelopCommand,
     },
     zip_safe=False,
-    packages=['sphinx_rtd_theme'],
-    package_data={'sphinx_rtd_theme': [
+    packages=['sphinx_veldus_theme'],
+    package_data={'sphinx_veldus_theme': [
         'theme.conf',
         '*.html',
         'static/css/*.css',
@@ -111,7 +111,7 @@ setup(
     # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
     entry_points = {
         'sphinx.html_themes': [
-            'sphinx_rtd_theme = sphinx_rtd_theme',
+            'sphinx_veldus_theme = sphinx_veldus_theme',
         ]
     },
     install_requires=[

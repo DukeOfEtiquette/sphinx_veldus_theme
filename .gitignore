@@ -1,3 +1,5 @@
+.vscode
+venv/
 *.pyc
 *.egg-info
 *.egg
@@ -17,9 +19,9 @@ local/
 node_modules
 npm-debug.log
 pip-selfcheck.json
-sphinx_rtd_theme/static/fonts/Lato/
-sphinx_rtd_theme/static/fonts/RobotoSlab/
+sphinx_veldus_theme/static/fonts/Lato/
+sphinx_veldus_theme/static/fonts/RobotoSlab/
 .python-version
 .node-version
-sphinx_rtd_theme/static/js/html5shiv.min.js
-sphinx_rtd_theme/static/js/html5shiv-printshiv.min.js
+sphinx_veldus_theme/static/js/html5shiv.min.js
+sphinx_veldus_theme/static/js/html5shiv-printshiv.min.js
