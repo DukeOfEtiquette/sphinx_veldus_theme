@@ -114,6 +114,7 @@
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition
     @extend .wy-alert
+    background: lighten($v-green, 70%)
     // These block elements are unsuitable for having floating objects next
     // to them
     clear: both
@@ -123,6 +124,7 @@
     @extend .wy-alert-title
     @extend .fa
     @extend .fa-exclamation-circle
+    background: lighten($v-green, 5%) !important
     &:before
       margin-right: 4px
   .note, .seealso
